@@ -28,3 +28,25 @@ def part_one(input_data):
 num_valid, num_invalid = part_one(input_data)
 print(f"{num_valid=}")
 print(f"{num_invalid=}")
+
+
+def part_two(input_data):
+    num_valid = 0
+    num_invalid = 0
+    for line in input_data:
+        char = line[0][-1]
+        string = line[1]
+        num_range = line[0].split("-")
+        first_char = int(num_range[0])
+        second_char = int(num_range[1].split(" ")[0])
+        # Note it needs XOR
+        if (string[first_char - 1] == char) ^ (string[second_char - 1] == char):
+            num_valid += 1
+        else:
+            num_invalid += 1
+
+
+num_valid, num_invalid = part_two(input_data)
+
+print(f"{num_valid=}")
+print(f"{num_invalid=}")
