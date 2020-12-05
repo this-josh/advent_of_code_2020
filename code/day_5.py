@@ -52,5 +52,5 @@ print(max(all_seat_ids))
 all_seat_ids.sort()
 for index in range(1, len(all_seat_ids)):
     diff = all_seat_ids[index] - all_seat_ids[index - 1]
-    if diff != 1:
+    if diff == 2:
         print(all_seat_ids[index] - 1)
